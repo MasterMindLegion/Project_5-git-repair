@@ -1,0 +1,47 @@
+//==============================================================================
+//-- Outputs a percentage value that will be used as the flex basis value
+//==============================================================================
+
+@function per-line($items) {
+  $g-pct: px-to-pc($gutter, $context: $max-width) * 2;
+  $g-total: $items * $g-pct;
+  @return (100% / $items) - $g-total;
+}
+
+//==============================================================================
+//---Converts pixel value to percentage. Defaults to maxwidth
+//==============================================================================
+@function px-to-pc($target, $context: $max-width) {
+  @return ($target / $context) * 100%;
+}
+
+//==============================================================================
+//---set the "context" width for the grid
+//==============================================================================
+// Set the "context" width for the grid
+
+@function g-context($g-col-width, $g-col-count ,$g-gutter-width) {
+  $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+  @return $g-context;
+}
+//==============================================================================
+// retrieve color from $colors map ie. `color(primary, base)`
+//==============================================================================
+@function color($color-name, $color-variant) {
+  // map inception
+  @return map-get(map-get($colors, $color-name), $color-variant);
+}
+//==============================================================================
+// Calculate em values
+//==============================================================================
+@function em($target, $context: $base__font-size) {
+	@return ($target / $context) * 1em;
+}
+  //==============================================================================
+
+  // Set the "context" width for the grid
+
+  @function g-context($g-col-width, $g-col-count ,$g-gutter-width) {
+    $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+    @return $g-context;
+  }

@@ -1,0 +1,71 @@
+// .grid__row
+// .logo
+// .navigation
+// .ul-navigation
+// .nav__item
+
+
+// .container{
+//   @extend %clearfix;
+//   @include flexy (
+//                   $disp: flex,
+//                   $wrap: wrap,  
+//                   $flow: column,                                       
+//                   $alignitems: center,
+//                   $margin: 1.5em,
+//                   $padding: 0                 
+//                   );
+                 
+//  }
+
+// .grid-row {
+//   width: 100%;
+//   justify-content:space-between;
+// }
+
+
+
+
+// header {
+//   @extend %clearfix;
+//   width: 100%;
+// }
+// .logo {
+//   text-align: center;
+// }
+
+
+// .ul-navigation {
+//   @extend %clearfix;
+//   @include flexy (
+//                   $disp: flex,
+//                   $wrap: wrap,
+//                   $just: space-between,
+//                   $basis: 100%
+                  
+                               
+//                  );
+  
+// }
+
+
+
+// .nav__item {
+//   @extend %clearfix;
+//   @extend %nav;
+  
+
+//      li {
+       
+
+//       }
+//       a {
+//         @extend %a;
+//       }
+//             &:hover {
+//                @extend %hover;
+//             }
+//             &:active {
+//               @extend %active;
+//             }
+//     }

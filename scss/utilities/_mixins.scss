@@ -1,0 +1,160 @@
+//-------------------------Mixins
+//==============================================================================
+
+
+//==============================================================================
+//-------------------------@Media Queries
+//==============================================================================
+@mixin desktop-large {
+  @media (min-width: #{$break-l}) {
+    @content;
+  }
+}
+//==============================================================================
+//-------------------------FlexContainer
+//==============================================================================
+@mixin flexy (
+       $disp:flex,
+       $dir:null,
+       $wrap:null,
+       $just:null,
+       $align:null,
+       $flow: null,
+       $alignself: null,
+       $alignitems: null,
+       $textalign: null,
+       $basis: null,
+       $width: null,
+       $margin: null,
+       $padding: null ) {
+       display: $disp;
+       flex-direction: $dir;
+       flex-wrap: $wrap;
+       justify-content: $just;
+       align-content: $align;
+       flex-flow: $flow;
+       align-self: $alignself;
+       align-items: $alignitems;
+       text-align: $textalign;
+       flex-basis: $basis;
+       width: $width;
+       margin: $margin;
+       padding: $padding;
+       @content;
+}
+//==============================================================================
+//-------------------------FlexItems
+//==============================================================================
+@mixin flexyitem(
+      $flex: 1,
+      $order: null,
+      $alignself: null,
+      $padding: null ) {
+      flex: $flex;
+      order: $order;
+      align-self: $alignself;
+       padding: $padding;
+    }
+    //==============================================================================
+    //-------------------------Responsive Images
+    //==============================================================================
+@mixin img (
+      $mw: 100%,
+      $height: auto ){
+      max-width: $mw;
+      height: $height;
+      @content;
+}
+///==============================================================================
+//-------------------------Block Elements
+//==============================================================================
+@mixin block (
+    $margin: null,
+    $padding: null,
+    $list: none,
+    $textalign: null,
+    $disp: null,
+    $back: null,
+    $radius: null,
+    $width: null,
+    $border: null) {
+    margin: $margin;
+    padding: $padding;
+    list-style: $list;
+    text-align: $textalign;
+    display: $disp;
+    background-color: $back;
+    border-width: $border;
+    border-radius: $radius;
+    width: $width;
+    @content;
+}
+//==============================================================================
+//-------------------------Buttons
+//==============================================================================
+@mixin btn (
+    $disp: null,
+    $width: null,
+    $padding: null,
+    $margin: null,
+    $border: null,
+    $back: null,
+    $color: null,
+    $radius: null,
+    $t-dec: null,
+    $l-type: null,
+    $trans: null,
+    $textalign: null,) {
+    display: $disp;
+    width: $width;
+    padding: $padding;
+    margin: $margin;
+    border: $border;
+    border-radius: $radius;
+    border-color: $back;
+    color: $color;
+    text-decoration: $t-dec;
+    list-style:$l-type;
+    text-transform: $trans;
+    text-align: $textalign;
+    @content;
+}
+//==============================================================================
+//-------------------------Center containers
+//==============================================================================
+
+@mixin center($w: 100%) {
+  width: $w;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//==============================================================================
+//-------------------------Dynamicely changing colors
+//==============================================================================
+@mixin bg-colors($map) {
+	@each $theme, $color in $map{
+		&--#{$theme} {
+			background-color: $color;
+		}
+	}
+}
+//not able tu use it on grid system
+
+// GRID - includes grid function, which defaults to max-width value of 100%
+@mixin grid($per-line) {
+flex: 1 per-line($per-line);
+text-align: center;
+border: none;
+border-radius: 5px;
+padding: $gutter;
+margin: 5px;
+  @media (min-width: $break-l) {
+margin-bottom: 2em;
+  }
+}
+
+
+
+
